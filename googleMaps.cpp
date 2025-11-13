@@ -66,7 +66,7 @@ void dijkstra(int graph[NUM_CITIES][NUM_CITIES], string srcCity, string destCity
     for (int i = 0; i < NUM_CITIES; i++) {
         dist[i] = INF;
         visited[i] = false;
-        prev[i] = -1; 
+        prev[i] = -1;
     }
 
     dist[srcIndex] = 0;
@@ -107,12 +107,13 @@ void dijkstra(int graph[NUM_CITIES][NUM_CITIES], string srcCity, string destCity
 
 int main() {
     int graph[NUM_CITIES][NUM_CITIES] = {
-        {0,   1400,   950,   2000,  1350,  1000}, 
-        {1400,   0,   270,   1500,  2200,  2150}, 
-        {950,   270,    0,   1600,  2100,  2000}, 
-        {2000, 1500,  1600,    0,  1650,  1900}, 
-        {1350, 2200,  2100,  1650,    0,   350}, 
-        {1000, 2150,  2000,  1900,   350,    0}  
+      // M(0)  D(1)   J(2)   K(3)   C(4)   B(5)
+        {0,   1400,   950,     0,   1350,  1000}, // 0: Mumbai
+        {1400,   0,   270,   1500,    0,   2150}, // 1: Delhi
+        {950,   270,    0,   1600,  2100,  2000}, // 2: Jaipur
+        {0,    1500,  1600,    0,   1650,  1900}, // 3: Kolkata
+        {1350,   0,   2100,  1650,    0,   350}, // 4: Chennai
+        {1000, 2150,  2000,  1900,   350,    0}  // 5: Bengaluru
     };
     
     for (int i = 0; i < NUM_CITIES; i++) {
